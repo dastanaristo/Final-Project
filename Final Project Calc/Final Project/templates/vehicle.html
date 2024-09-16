@@ -7,8 +7,8 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <title>Perhitungan efisiensi energi untuk rumah pintar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+  <title>Energy efficiency calculations for smart homes</title>
 </head>
 <body>
   <header class="header">
@@ -24,21 +24,21 @@
       <!-- Tugas #3 -->
       <li class="list__item">
         <a href="{{size + lights + device + "/1" }}"> 
-          <img class="item__img" src="../static/img/Bike.svg" alt="Bike">
+          <img class="item__img" src="{{ url_for('static', filename='/img/bike.svg') }}" alt="Bike">
           <span>Bike</span></a>
       <li class="list__item">
         <a href="{{size + lights + device + "/4" }}"> 
-          <img class="item__img" src="../static/img/MotorBike.svg" alt="MotorBike">
+          <img class="item__img" src="{{ url_for('static', filename='/img/Motorbike.svg') }}" alt="Motorbike">
           <span>Motorbike</span></a>
       </li>
       <li class="list__item">
         <a href="{{size + lights + device + "/7" }}"> 
-          <img class="item__img" src="../static/img/Car.svg" alt="Car">
+          <img class="item__img" src="{{ url_for('static', filename='/img/Car.svg') }}" alt="Car">
           <span>Car</span></a>
       </li>
       <li class="list__item">
         <a href="{{size + lights + device + "/10" }}"> 
-          <img class="item__img" src="../static/img/Van.svg" alt="Van">
+          <img class="item__img" src="{{ url_for('static', filename='/img/van.svg') }}" alt="Van">
           <span>Van</span></a>
       </li>
 
@@ -48,7 +48,8 @@
     {% endblock %}
   </main>
   <footer>
-
+    <div class="footer__button"></div>
+      <a href="/formdata"class="btn">More Information...</a>
   </footer>
 </body>
 </html>

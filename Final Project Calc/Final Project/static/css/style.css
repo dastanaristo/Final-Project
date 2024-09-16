@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0A1A33; /* Dark blue background */
+    color: #A9D6FF; /* Light blue text */
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica', sans-serif;
-    font-size: 18px;
-    line-height: 20px;
-    background-color: #088F8F;
-    color: #fdfdfd;
+    line-height: 1.6;
 }
 
-h1, h2, p {
+h1, h2{
+    font-size: 40px;
     margin: 0;
+
+}
+p {
+    margin: 0;
+    font-size: 35px;
 }
 
 ul {
@@ -25,7 +30,7 @@ ul {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
-    background-color: #87CEEB;
+    background-color: #12294A; /* Slightly lighter dark blue background */
     padding: 25vh 30px;
     margin-bottom: 60px;
     display: flex;
@@ -175,3 +180,23 @@ label {
     font: inherit;
     color: #fff;
 }
+/* Styling for the button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(13, 122, 177);
+    color: #ffffff; /* Dark blue text for contrast */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .btn:hover {
+    background-color: #266bac; /* Slightly lighter blue on hover */
+  }
+  

@@ -7,8 +7,8 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
   >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../../static/css/style.css"> 
-  <title>Perhitungan efisiensi energi untuk rumah pintar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+  <title>Energy efficiency calculations for smart homes</title>
 </head>
 <body>
   <header class="header">
@@ -22,15 +22,15 @@
     <h2 class="main__title main__title--margin">Your energy Efficeiency:</h2>
     <div class="main__rez" id="end">
         {%if result <= 150%}
-        <img class="rez__img" src="../../static/img/planet_good.svg" alt="">
+          <img class="item__img" src="{{ url_for('static', filename='/img/planet_good.svg') }}" alt="">
         <span>You use {{result}} kWh</span>
         <span>You Have Very Efficeient Energy!</span>
         {%elif result >= 151 and result < 300%}
-        <img class="rez__img" src="../../static/img/planet_medium.svg" alt="">
+        <img class="item__img" src="{{ url_for('static', filename='/img/planet_medium.svg') }}" alt="">
         <span>You Use {{result}} kWh</span>
         <span>Your Energy usage is average!</span>
         {%elif result >= 300%}
-        <img class="rez__img" src="../../static/img/planet_bad.svg" alt="">
+        <img class="item__img" src="{{ url_for('static', filename='/img/planet_bad.svg') }}" alt="">
         <span>You use {{result}} kWh </span>
         <span>Your energy Efficeiency is Below average </span>
         <span>Do you want to make the world a better place? click the button to find the solution!</span>
@@ -40,7 +40,8 @@
     {% endblock %}
   </main>
   <footer>
-
+    <div class="footer__button"></div>
+      <a href="/formdata"class="btn">More Information...</a>
   </footer>
 </body>
 </html>

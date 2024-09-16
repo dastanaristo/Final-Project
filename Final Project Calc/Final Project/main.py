@@ -3,21 +3,20 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__, static_folder='static')
 
-scaling_factor = 1.2
-
 def result_calculate(size, lights, device, vehicle, trips):
     # Variables to calculate energy consumption
-    home_coef = 100
-    light_coef = 0.04
-    devices_coef = 5
-    vehicle_coef = 2
-    trips_coef = 1
-    
+    home_coef = 10       
+    light_coef = 0.02    
+    devices_coef = 0.5   
+    vehicle_coef = 0.75  
+    trips_coef = 0.5     
+
     return (size * home_coef + 
-              lights * light_coef + 
-              device * devices_coef + 
-              vehicle * vehicle_coef + 
-              trips * trips_coef)
+            lights * light_coef + 
+            device * devices_coef + 
+            vehicle * vehicle_coef + 
+            trips * trips_coef)
+
 # First page
 @app.route('/')
 def index():
@@ -64,5 +63,9 @@ def form():
 def submit_form():
     name = request.form['name']
     return render_template('form_result.html', name=name)
+# Form data
+@app.route('/formdata')
+def form_data():
+    return render_template('form_data.html')
 
 app.run(debug=True)
